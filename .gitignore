@@ -1,0 +1,16 @@
+# Ignore system-specific or sensitive files
+*.swp              # Vim swap files
+.history           # Shell history files
+.cache/            # Cache directories
+*.log              # Log files
+__pycache__/       # Python cache
+node_modules/      # Node.js modules
+
+# Ignore specific local-only dotfiles
+.secrets           # Sensitive environment files
+*.bak              # Backup files
+.idea/             # JetBrains IDE configs
+.vscode/           # VS Code workspace settings
+
+# Ignore GNU Stow symlinked directories
+*/stow-backups/    # Prevent Stow backup directories
