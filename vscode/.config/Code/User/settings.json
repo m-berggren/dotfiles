@@ -43,7 +43,7 @@
       "source.organizeImports.ruff": "explicit"
     },
     "editor.rulers": [88],
-    "editor.suggestOnTriggerCharacters": true
+    "editor.suggestOnTriggerCharacters": true,
   },
   "[javascript]": {
     "editor.tabSize": 2,
@@ -84,4 +84,7 @@
   },
   "ruff.format.args": ["--line-length", "88"],
   "ruff.lint.args": ["--line-length", "88"],
+  "ruff.lint.run": "onSave",
+  "ruff.organizeImports": true,
+  "ruff.fixAll": true
 }
