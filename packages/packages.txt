@@ -122,6 +122,7 @@ sof-firmware
 speedtest-cli
 spotify
 starship
+stow
 sushi
 swaybg
 swayosd

@@ -1,15 +1,20 @@
 # Makefile setup
 
 PWD := $(shell pwd)
+STOW_PACKAGES := fish hypr waybar starship mise
+STOW_FLAGS := -v -R -t $(HOME)
 
-.PHONY: all install paru packages symlinks fish mise clean help
+.PHONY: all install init paru packages symlinks clean help
 
 all: install
 
-install: paru packages symlinks fish mise
+install: init paru packages symlinks nvim vscode
 	@echo "✓ Setup complete"
 
-# Will use paru to install all packages, official or not
+init:
+	@echo "Initializing submodules..."
+	@git submodule update --init --recursive || true
+
 paru:
 	@command -v paru >/dev/null 2>&1 || { \
 		echo "Installing paru..."; \
@@ -21,61 +26,32 @@ paru:
 
 packages: paru
 	@echo "Installing all packages..."
-	@paru -S --needed --noconfirm $$(cat packages/packages.txt 2>/dev/null | grep -v '^#' | grep -v '^$$')
+	@paru -S --needed --noconfirm $$(grep -v '^#' packages/packages.txt | grep -v '^$$')
 
-nvim: packages
-	@echo "Setting up neovim config..."
-	@if [ ! -d ~/.config/nvim ]; then \
-		git clone https://github.com/m-berggren/nvim.git ~/.config/nvim; \
-	else \
-		echo "  nvim config already exists"; \
+symlinks: # Handle nvim separately due to being a submodule
+	@echo "Creating symlinks with GNU Stow..."
+	@for package in $(STOW_PACKAGES); do \
+		if [ -d "$$package" ]; then \
+			stow $(STOW_FLAGS) $$package && echo "  ✓ $$package linked"; \
+		fi \
+	done
+	@if [ -d nvim/.config/nvim ]; then \
+		stow $(STOW_FLAGS) nvim && echo "  ✓ nvim linked"; \
 	fi
 
-symlinks: 	# Check if nvim came from submodule or needs direct clone
-	@echo "Creating symlinks..."
-	@mkdir -p ~/.config
-	@ln -sf $(PWD)/fish/.config/fish ~/.config/
-	@ln -sf $(PWD)/hypr/.config/hypr ~/.config/
-	@if [ -d $(PWD)/nvim/.config/nvim ]; then \
-		ln -sf $(PWD)/nvim/.config/nvim ~/.config/; \
-	elif [ ! -d ~/.config/nvim ]; then \
+nvim:
+	@echo "Ensuring neovim config..."
+	@if [ ! -d ~/.config/nvim ] && [ ! -d nvim/.config/nvim ]; then \
 		git clone https://github.com/m-berggren/nvim.git ~/.config/nvim; \
 	fi
-	@ln -sf $(PWD)/starship/.config/starship.toml ~/.config/
-	@ln -sf $(PWD)/waybar/.config/waybar ~/.config/
-	@ln -sf $(PWD)/mise/.config/mise ~/.config/
-	@ln -sf $(PWD)/vscode/.config/Code/User/ ~/.config/
-
-fish: packages
-	@echo "Setting up fish..."
-	@grep -q /usr/bin/fish /etc/shells || echo /usr/bin/fish | sudo tee -a /etc/shells
-	@[ "$$SHELL" = "/usr/bin/fish" ] || chsh -s /usr/bin/fish
-	@fish -c "type -q fisher || curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
-
-mise: packages symlinks
-	@echo "Setting up mise tools..."
-	@mise install --yes
-	@mise reshim
-	@echo "Installed languages:"
-	@mise list --installed
-
-vscode: packages
-	@echo "Installing VSCode extensions..."
-	@command -v code >/dev/null 2>&1 && { \
-		cat vscode/extensions.txt | grep -v '^#' | grep -v '^$$' | xargs -L 1 code --install-extension; \
-	} || echo "VSCode not found, skipping extensions"
 
 clean:
-	@echo "Removing symlinks..."
-	@rm -rf ~/.config/fish ~/.config/hypr ~/.config/nvim ~/.config/starship.toml ~/.config/waybar ~/.config/mise
+	@echo "Removing symlinks with stow..."
+	@for package in $(STOW_PACKAGES) nvim; do \
+		stow -D -t $(HOME) $$package 2>/dev/null || true; \
+	done
 
-help:
-	@echo "Available targets:"
-	@echo "  make install    - Full installation"
-	@echo "  make paru       - Install paru AUR helper"
-	@echo "  make packages   - Install all packages"
-	@echo "  make symlinks   - Create config symlinks"
-	@echo "  make fish       - Setup fish shell"
-	@echo "  make mise       - Install mise tools"
-	@echo "  make vscode     - Install VSCode extensions"
-	@echo "  make clean      - Remove symlinks"
+restow: ## Relink everything (useful after changes)
+	@echo "Restowing all packages..."
+	@stow $(STOW_FLAGS) $(STOW_PACKAGES)
+	@[ -d nvim/.config/nvim ] && stow $(STOW_FLAGS) nvim || true
