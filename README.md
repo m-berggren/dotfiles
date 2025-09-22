@@ -2,11 +2,11 @@
 Dotfiles for GNU Stow usage
 
 ## Details
-OS: Arch Linux, using Omarchy
-VM: Hyprland
-Terminal: Alacritty & Ghostty
-Shell: Fish together with Starship
-Themes: Varying (from within Omarchy) but mainly Kanagawa, Everforest
+**OS**: Arch Linux, using Omarchy <br>
+**VM**: Hyprland <br>
+**Terminal**: Alacritty & Ghostty <br>
+**Shell**: Fish together with Starship <br>
+**Themes**: Varying (from within Omarchy) but mainly Kanagawa, Everforest
 
 ## Applications in use
 - Anki
