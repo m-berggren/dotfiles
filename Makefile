@@ -23,12 +23,24 @@ packages: paru
 	@echo "Installing all packages..."
 	@paru -S --needed --noconfirm $$(cat packages/packages.txt 2>/dev/null | grep -v '^#' | grep -v '^$$')
 
-symlinks:
+nvim: packages
+	@echo "Setting up neovim config..."
+	@if [ ! -d ~/.config/nvim ]; then \
+		git clone https://github.com/m-berggren/nvim.git ~/.config/nvim; \
+	else \
+		echo "  nvim config already exists"; \
+	fi
+
+symlinks: 	# Check if nvim came from submodule or needs direct clone
 	@echo "Creating symlinks..."
 	@mkdir -p ~/.config
 	@ln -sf $(PWD)/fish/.config/fish ~/.config/
 	@ln -sf $(PWD)/hypr/.config/hypr ~/.config/
-	@ln -sf $(PWD)/nvim/.config/nvim ~/.config/
+	@if [ -d $(PWD)/nvim/.config/nvim ]; then \
+		ln -sf $(PWD)/nvim/.config/nvim ~/.config/; \
+	elif [ ! -d ~/.config/nvim ]; then \
+		git clone https://github.com/m-berggren/nvim.git ~/.config/nvim; \
+	fi
 	@ln -sf $(PWD)/starship/.config/starship.toml ~/.config/
 	@ln -sf $(PWD)/waybar/.config/waybar ~/.config/
 	@ln -sf $(PWD)/mise/.config/mise ~/.config/
