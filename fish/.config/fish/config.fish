@@ -1,44 +1,30 @@
-source ~/.config/fish/alias.fish
+# Config
+set -g fish_greeting
 
-if status --is-interactive
-	if type -q autojump
-		[ -f /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish ]; and source /home/linuxbrew/.linuxbrew/share/autojump/autojump.fish
-	end
-	if type -q atuin
-		atuin init fish | source
-	end
+if status is-interactive
+    if command -q mise
+        mise activate fish | source
+    end
+
+    if command -q atuin
+        atuin init fish | source
+    end
+
+    if command -q zoxide
+        zoxide init fish | source
+    end
+
+    if command -q starship
+        starship init fish | source
+    end
 end
 
-# Load all saved ssh keys
-if test -x /usr/bin/ssh-add
-	/usr/bin/ssh-add -A &>/dev/null
-end
+# Disable legacy cryptographic algorithms in Python cryptography library for security
+set -gx CRYPTOGRAPHY_OPENSSL_NO_LEGACY 1
 
-# Fish syntax highlighting
-set -g fish_color_autosuggestion '555'  'brblack'
-set -g fish_color_cancel -r
-set -g fish_color_command --bold
-set -g fish_color_comment red
-set -g fish_color_cwd green
-set -g fish_color_cwd_root red
-set -g fish_color_end brmagenta
-set -g fish_color_error brred
-set -g fish_color_escape 'bryellow'  '--bold'
-set -g fish_color_history_current --bold
-set -g fish_color_host normal
-set -g fish_color_match --background=brblue
-set -g fish_color_normal normal
-set -g fish_color_operator bryellow
-set -g fish_color_param cyan
-set -g fish_color_quote yellow
-set -g fish_color_redirection brblue
-set -g fish_color_search_match 'bryellow'  '--background=brblack'
-set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
-set -g fish_color_user brgreen
-set -g fish_color_valid_path --underline
-
-# Install Starship
-starship init fish | source
-
-# Zoxide
-zoxide init fish | source
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+set -gx MAMBA_EXE /usr/bin/micromamba
+set -gx MAMBA_ROOT_PREFIX "/home/mbx/.local/share/mamba"
+$MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
+# <<< mamba initialize <<<

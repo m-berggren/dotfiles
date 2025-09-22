@@ -1,10 +1,5 @@
 {
-  "editor.fontFamily": "CaskaydiaMono Nerd Font",
-  "editor.tabSize": 2,
-  "security.workspace.trust.untrustedFiles": "open",
-  "editor.minimap.enabled": false,
-  "git.ignoreMissingGitWarning": true,
-  "editor.fontSize": 12,
+  // Editor Behavior
   "editor.occurrencesHighlight": "multiFile",
   "editor.selectionHighlight": true,
   "editor.suggestOnTriggerCharacters": false,
@@ -14,99 +9,32 @@
     "comments": true,
     "strings": true
   },
+
+  // File Management
   "files.trimTrailingWhitespace": true,
-  "git.confirmSync": false,
-  "window.menuBarVisibility": "compact",
-  "git.autofetch": true,
-  "git.openRepositoryInParentFolders": "always",
-  "explorer.confirmDelete": false,
-  "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "Tokyo Night",
-  "window.titleBarStyle": "custom",
-  "terminal.integrated.defaultProfile.linux": "fish",
   "files.autoSave": "onFocusChange",
-  "[typescript]": {
-    "editor.suggestOnTriggerCharacters": true,
-    "editor.suggest.showKeywords": true,
-    "editor.suggest.showClasses": true,
-    "editor.suggest.showFunctions": true,
-    "editor.suggest.showMethods": true,
-    "editor.suggest.showProperties": true
-  },
-  "[python]": {
-    "editor.tabSize": 4,
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.ruff": "explicit",
-      "source.organizeImports.ruff": "explicit"
-    },
-    "editor.rulers": [88],
-    "editor.suggestOnTriggerCharacters": true,
-  },
-  "[javascript]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true
-  },
-  "[javascriptreact]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[html]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true
-  },
-  "[css]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true
-  },
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.formatOnSave": false,
-    "editor.tabSize": 4,
-    "editor.rulers": [80],
-    "editor.wordBasedSuggestions": "off"
-  },
 
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4,
-    "editor.rulers": [80],
-    "editor.wordBasedSuggestions": "off"
-  },
+  // UI/Display
+  "workbench.colorTheme": "Kanagawa",
 
-  "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80, AllowShortFunctionsOnASingleLine: Empty }",
-  "C_Cpp.vcFormat.indent.caseLabels": true,
-  "C_Cpp.vcFormat.indent.preserveComments": true,
-  "C_Cpp.formatting": "clangFormat",
-  "C_Cpp.errorSquiggles": "enabled",
+  // Terminal
+  "terminal.integrated.defaultProfile.linux": "fish",
 
-  "redhat.telemetry.enabled": true,
+  // Explorer
+  "explorer.confirmDragAndDrop": false,
+
+  // Extensions
+  "extensions.ignoreRecommendations": true,
+
+  // GitHub Copilot
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
-  "explorer.confirmDragAndDrop": false,
-  "terminal.integrated.inheritEnv": false,
-  "files.associations": {
-    "*.py": "python",
-    "*.js": "javascript",
-    "*.jsx": "javascriptreact",
-    "*.ts": "typescript",
-    "*.tsx": "typescriptreact"
-  },
-  "ruff.format.args": ["--line-length", "88"],
-  "ruff.lint.args": ["--line-length", "88"],
-  "ruff.lint.run": "onSave",
+
+  // Ruff (Python)
   "ruff.organizeImports": true,
   "ruff.fixAll": true
 }
