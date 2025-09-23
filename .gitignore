@@ -9,6 +9,7 @@ node_modules/
 # Ignore specific local-only dotfiles
 .secrets
 *.bak
+*.bak.*
 .idea/
 .vscode/
 

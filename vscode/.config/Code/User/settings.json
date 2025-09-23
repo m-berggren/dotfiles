@@ -1,5 +1,7 @@
 {
-  // Editor Behavior
+  "workbench.colorTheme": "Kanagawa",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "editor.occurrencesHighlight": "multiFile",
   "editor.selectionHighlight": true,
   "editor.suggestOnTriggerCharacters": false,
@@ -9,32 +11,16 @@
     "comments": true,
     "strings": true
   },
-
-  // File Management
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
-
-  // UI/Display
-  "workbench.colorTheme": "Kanagawa",
-
-  // Terminal
   "terminal.integrated.defaultProfile.linux": "fish",
-
-  // Explorer
-  "explorer.confirmDragAndDrop": false,
-
-  // Extensions
   "extensions.ignoreRecommendations": true,
-
-  // GitHub Copilot
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
-
-  // Ruff (Python)
   "ruff.organizeImports": true,
   "ruff.fixAll": true
 }

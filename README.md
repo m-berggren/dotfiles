@@ -2,11 +2,11 @@
 Dotfiles for GNU Stow usage
 
 ## Details
-**OS**: Arch Linux, using Omarchy <br>
+**OS**: Arch Linux <br>
 **VM**: Hyprland <br>
-**Terminal**: Alacritty & Ghostty <br>
-**Shell**: Fish together with Starship <br>
-**Themes**: Varying (from within Omarchy) but mainly Kanagawa, Everforest
+**Terminals**: Alacritty & Ghostty <br>
+**Shell**: Fish with Starship customization <br>
+**Themes**: Mainly Kanagawa, Everforest
 
 ## Applications in use
 - Anki
@@ -20,3 +20,5 @@ Dotfiles for GNU Stow usage
 - Zen Browser
 - Yazi
 
+## Running
+Install everything through `make all` or `make`.

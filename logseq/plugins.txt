@@ -1,0 +1,11 @@
+pengx17/logseq-plugin-bullet-threading
+ahonn/logseq-plugin-todo
+vyleung/logseq-copy-code-plugin
+gidongkwon/logseq-plugin-tags
+haydenull/logseq-plugin-git
+sawhney17/logseq-automatic-linker
+debanjandhar12/logseq-anki-sync
+yoyurec/logseq-banners-plugin
+AllanChain/logseq-live-math
+vipzhicheng/logseq-plugin-block-calendar
+pengx17/logseq-plugin-tabs
