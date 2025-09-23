@@ -1,9 +1,13 @@
+arcticicestudio.nord-visual-studio-code
 asvetliakov.vscode-neovim
 catppuccin.catppuccin-vsc
 charliermarsh.ruff
 eamodio.gitlens
 enkia.tokyo-night
+jdinhlife.gruvbox
+jovejonovski.ocean-green
 kevinrose.vsc-python-indent
+monokai.theme-monokai-pro-vscode
 ms-azuretools.vscode-containers
 ms-python.black-formatter
 ms-python.debugpy
@@ -23,7 +27,11 @@ ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
 ms-vscode.remote-explorer
+mvllow.rose-pine
 njpwerner.autodocstring
 qufiwefefwoyn.kanagawa
+redhat.vscode-yaml
 sainnhe.everforest
+tamasfe.even-better-toml
+vue.volar
 ziglang.vscode-zig
