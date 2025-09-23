@@ -9,6 +9,7 @@ Dotfiles for GNU Stow usage
 **Themes**: Mainly Kanagawa, Everforest
 
 ## Applications in use
+Some of the applications installed through Makefile:
 - Anki
 - Docker
 - Logseq
@@ -20,5 +21,9 @@ Dotfiles for GNU Stow usage
 - Zen Browser
 - Yazi
 
-## Running
-Install everything through `make all` or `make`.
+## Run Makefile
+Install everything through `make all` or `make` command.
+
+`make restow` to just recreate symlinks, or `make restow-dry` to simulate before actual run.
+
+`make clean` will remove all symlinks.
