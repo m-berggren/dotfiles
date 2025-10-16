@@ -4,5 +4,8 @@ idiomatic_version_file_enable_tools = ["ruby"]
 [settings.ruby]
 
 [tools]
+dotnet = "latest"
+node = "latest"
+pnpm = "latest"
 python = "latest"
 zig = "latest"
