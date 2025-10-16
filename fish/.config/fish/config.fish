@@ -15,7 +15,7 @@ if status is-interactive
     end
 
     if command -q atuin
-        atuin init fish | source
+        atuin init fish --disable-up-arrow | source
         # Adding below fix when up-arrow no longer working with atuin
         bind up _atuin_bind_up
     end
@@ -36,3 +36,10 @@ set -gx PATH /usr/sbin $PATH
 # Normally I use mise for handling zig verisons, 
 # but in this case I want specifically a new dev verison
 set -x PATH ~/.zig $PATH
+
+# pnpm
+set -gx PNPM_HOME "/home/mbx/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
