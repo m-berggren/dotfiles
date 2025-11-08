@@ -1,0 +1,9 @@
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[user]
+	name = Marcus Berggren
+	email = berggren.me@outlook.com
+[IncludeIf "gitdir:~/Documents/projects/gitlab/"]
+	path = .gitconfig-chalmers
