@@ -14,7 +14,6 @@
   },
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
-  "terminal.integrated.defaultProfile.linux": "fish",
   "extensions.ignoreRecommendations": true,
   "ruff.organizeImports": true,
   "ruff.fixAll": true,
@@ -63,5 +62,30 @@
   "jupyter.askForKernelRestart": false,
   "codeium.enableConfig": {
     "*": true
-  }
+  },
+  "explorer.confirmPasteNative": false,
+  "python.terminal.activateEnvironment": false,
+  "terminal.integrated.profiles.linux": {
+
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+},
+"terminal.integrated.defaultProfile.linux": "fish",
+  "breadcrumbs.enabled": true,
 }
