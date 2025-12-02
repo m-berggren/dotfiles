@@ -1,7 +1,7 @@
 # Makefile setup
 
 PWD := $(shell pwd)
-STOW_PACKAGES := alacritty fish ghostty hypr mise nvim starship waybar gitconfig
+STOW_PACKAGES := alacritty fish ghostty hypr kanata mise nvim starship waybar gitconfig
 STOW_FLAGS := -v -R -t $(HOME)
 
 .PHONY: all install init paru packages symlinks clean help

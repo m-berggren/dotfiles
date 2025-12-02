@@ -60,6 +60,7 @@ iw
 iwd
 jetbrains-toolbox
 jq
+kanata
 kdenlive
 kvantum-qt5
 lazydocker
