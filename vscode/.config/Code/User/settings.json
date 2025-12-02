@@ -86,6 +86,16 @@
       "icon": "terminal-powershell"
     },
 },
-"terminal.integrated.defaultProfile.linux": "fish",
-  "breadcrumbs.enabled": true,
+  "terminal.integrated.defaultProfile.linux": "fish",
+    "breadcrumbs.enabled": true,
+    "terminal.integrated.inheritEnv": false,
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": false,
+      "markdown": false,
+      "scminput": false,
+      "python": true
+    },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "editor.inlineSuggest.enabled": false,
 }
