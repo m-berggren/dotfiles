@@ -35,29 +35,29 @@
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit",
-        "source.fixAll": "explicit"
+      "source.organizeImports": "explicit",
+      "source.fixAll": "explicit"
     }
-},
+  },
   "[typescript]": {
-      "editor.defaultFormatter": "biomejs.biome",
-      "editor.formatOnSave": true
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
   },
   "[javascript]": {
-      "editor.defaultFormatter": "biomejs.biome",
-      "editor.formatOnSave": true
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
-      "editor.defaultFormatter": "biomejs.biome",
-      "editor.formatOnSave": true
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
   },
   "[javascriptreact]": {
-      "editor.defaultFormatter": "biomejs.biome",
-      "editor.formatOnSave": true
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
   },
   "[json]": {
-      "editor.defaultFormatter": "biomejs.biome",
-      "editor.formatOnSave": true
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
   },
   "jupyter.askForKernelRestart": false,
   "codeium.enableConfig": {
@@ -66,7 +66,6 @@
   "explorer.confirmPasteNative": false,
   "python.terminal.activateEnvironment": false,
   "terminal.integrated.profiles.linux": {
-
     "bash": {
       "path": "bash",
       "icon": "terminal-bash"
@@ -85,17 +84,23 @@
       "path": "pwsh",
       "icon": "terminal-powershell"
     },
-},
+  },
   "terminal.integrated.defaultProfile.linux": "fish",
-    "breadcrumbs.enabled": true,
-    "terminal.integrated.inheritEnv": false,
-    "github.copilot.enable": {
-      "*": true,
-      "plaintext": false,
-      "markdown": false,
-      "scminput": false,
-      "python": true
-    },
+  "breadcrumbs.enabled": true,
+  "terminal.integrated.inheritEnv": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": true
+  },
   "github.copilot.nextEditSuggestions.enabled": false,
   "editor.inlineSuggest.enabled": false,
+  "zig.zls.enabled": "on",
+  "[xml]": {
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnSave": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
 }
