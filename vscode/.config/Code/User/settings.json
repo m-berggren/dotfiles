@@ -1,6 +1,5 @@
 {
   "update.mode": "none",
-  "workbench.colorTheme": "Kanagawa",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "editor.occurrencesHighlight": "multiFile",
@@ -40,23 +39,23 @@
     }
   },
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[json]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "jupyter.askForKernelRestart": false,
@@ -103,4 +102,6 @@
   },
   "editor.formatOnSave": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "debug.onTaskErrors": "showErrors",
+  "workbench.colorTheme": "Kanagawa",
 }
