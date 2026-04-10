@@ -36,8 +36,15 @@ alias ls="eza -la --color=always --group-directories-first"
 # but in this case I want specifically a new dev verison
 set -x PATH ~/.zig $PATH
 
+# Pinta installs dotnet-host to /usr/bin/dotnet (runtime only, no SDK).
+# mise activate can't reliably override it in PATH, so we use a function
+# to route dotnet commands through mise's SDK install.
+# Remove this if you uninstall pinta and the system dotnet packages.
 set -gx DOTNET_ROOT (mise where dotnet)
-set -gx PATH $DOTNET_ROOT $PATH
+
+function dotnet --wraps dotnet
+    command $DOTNET_ROOT/dotnet $argv
+end
 
 # pnpm
 set -gx PNPM_HOME "/home/mbx/.local/share/pnpm"
@@ -45,3 +52,6 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# Read in secrets
+source ~/.config/fish/secrets.fish
