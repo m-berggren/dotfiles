@@ -9,7 +9,7 @@
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,
-    "strings": true
+    "strings": true,
   },
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
@@ -23,65 +23,65 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true
+      "strings": true,
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
-      "source.fixAll": "explicit"
-    }
+      "source.fixAll": "explicit",
+    },
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "jupyter.askForKernelRestart": false,
   "codeium.enableConfig": {
-    "*": true
+    "*": true,
   },
   "explorer.confirmPasteNative": false,
   "python.terminal.activateEnvironment": false,
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash",
-      "icon": "terminal-bash"
+      "icon": "terminal-bash",
     },
     "zsh": {
-      "path": "zsh"
+      "path": "zsh",
     },
     "fish": {
-      "path": "fish"
+      "path": "fish",
     },
     "tmux": {
       "path": "tmux",
-      "icon": "terminal-tmux"
+      "icon": "terminal-tmux",
     },
     "pwsh": {
       "path": "pwsh",
-      "icon": "terminal-powershell"
+      "icon": "terminal-powershell",
     },
   },
   "terminal.integrated.defaultProfile.linux": "fish",
@@ -92,16 +92,17 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false,
-    "python": true
+    "python": true,
   },
   "github.copilot.nextEditSuggestions.enabled": false,
   "editor.inlineSuggest.enabled": false,
   "zig.zls.enabled": "on",
   "[xml]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "editor.formatOnSave": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "debug.onTaskErrors": "showErrors",
   "workbench.colorTheme": "Kanagawa",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
 }

@@ -8,6 +8,7 @@ node_modules/
 
 # Ignore specific local-only dotfiles
 .secrets
+secrets.fish
 *.bak
 *.bak.*
 .idea/
